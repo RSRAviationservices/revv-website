@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Defense/Military Dark Theme - Teal, White, Black */
+  --background: #050808;
+  --foreground: #ffffff;
+  
+  --card: #080a0a;
+  --card-foreground: #ffffff;
+  
+  --popover: #080a0a;
+  --popover-foreground: #ffffff;
+  
+  /* Tactical Blue Primary */
+  --primary: #00CAB1;
+  --primary-foreground: #ffffff;
+  
+  /* Cool Blue Secondary */
+  --secondary: #00CAB1;
+  --secondary-foreground: #000000;
+  
+  --muted: #101414;
+  --muted-foreground: #94a3b8;
+  
+  /* Light Blue accent for tech elements */
+  --accent: #00CAB1;
+  --accent-foreground: #000000;
+  
+  /* Status colors */
+  --accent-blue: #00CAB1;
+  --accent-emerald: #22c55e;
+  --accent-purple: #8b5cf6;
+  --accent-orange: #f97316;
+  --accent-red: #ef4444;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #182020;
+  --input: #101414;
+  --input-background: #080a0a;
+  --switch-background: #182020;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #00CAB1;
+  
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  
+  /* Accent colors */
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-emerald: var(--accent-emerald);
+  --color-accent-purple: var(--accent-purple);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    font-family: 'Rajdhani', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Tactical HUD corners */
+  .hud-corners {
+    position: relative;
+  }
+  
+  .hud-corners::before,
+  .hud-corners::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary);
+  }
+  
+  .hud-corners::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .hud-corners::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+
+  /* Scan line effect */
+  .scan-lines {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-lines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Tactical button */
+  .btn-tactical {
+    @apply relative overflow-hidden font-bold uppercase tracking-wider;
+    background: linear-gradient(135deg, var(--primary), #00CAB1);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.3s ease;
+  }
+  
+  .btn-tactical:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 30px rgba(0, 202, 177, 0.4);
+  }
+  
+  .btn-tactical span {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Outline tactical button */
+  .btn-tactical-outline {
+    @apply relative font-bold uppercase tracking-wider border-2;
+    border-color: var(--primary);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.3s;
+    background: transparent;
+  }
+  
+  .btn-tactical-outline:hover {
+    background: rgba(0, 202, 177, 0.15);
+  }
+
+  /* Card with tactical styling */
+  .card-tactical {
+    @apply relative backdrop-blur-xl border border-border;
+    background: rgba(18, 22, 28, 0.8);
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  }
+  
+  .card-tactical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  }
+
+  /* Grid pattern background */
+  .grid-tactical {
+    background-image: 
+      linear-gradient(rgba(0, 202, 177, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 202, 177, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Hex pattern */
+  .hex-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2300CAB1' fill-opacity='0.02'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Neon glow */
+  .glow-primary {
+    box-shadow: 
+      0 0 20px rgba(0, 202, 177, 0.3),
+      0 0 40px rgba(0, 202, 177, 0.2),
+      0 0 60px rgba(0, 202, 177, 0.1);
+  }
+  
+  .glow-accent {
+    box-shadow: 
+      0 0 20px rgba(0, 202, 177, 0.3),
+      0 0 40px rgba(0, 202, 177, 0.2),
+      0 0 60px rgba(0, 202, 177, 0.1);
+  }
+
+  /* Text glow */
+  .text-glow-primary {
+    text-shadow: 0 0 30px rgba(0, 202, 177, 0.5);
+  }
+  
+  .text-glow-accent {
+    text-shadow: 0 0 30px rgba(0, 202, 177, 0.5);
+  }
+
+  /* Data display styling */
+  .data-value {
+    font-family: 'Orbitron', monospace;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  .data-label {
+    @apply text-xs uppercase tracking-widest;
+    color: var(--muted-foreground);
+  }
+
+  /* Mobile menu styling */
+  .mobile-menu-panel {
+    @apply fixed top-0 right-0 h-full w-72 max-w-[85vw] z-[90];
+    background: rgba(10, 12, 16, 0.98);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(0, 202, 177, 0.2);
+    box-shadow: -10px 0 40px rgba(0, 202, 177, 0.1);
+  }
+
+  .mobile-menu-link {
+    @apply block px-4 py-3 text-lg font-semibold rounded-lg transition-all duration-200;
+    color: var(--foreground);
+  }
+  
+  .mobile-menu-link:hover {
+    color: var(--primary);
+    background: rgba(0, 202, 177, 0.1);
+  }
+  
+  .mobile-menu-link:active {
+    background: rgba(0, 202, 177, 0.2);
+  }
+
+  /* Story link underline effect */
+  .story-link {
+    @apply relative inline-block;
+  }
+  
+  .story-link::after {
+    content: '';
+    @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 origin-bottom-right;
+    background: var(--primary);
+    transition: transform 0.3s ease;
+  }
+  
+  .story-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+
+  /* Gentle transition */
+  .gentle-animation {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Glass effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer utilities {
+  .clip-tactical {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  
+  .clip-tactical-sm {
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+}
+
+/* Clean scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+  }
+}
