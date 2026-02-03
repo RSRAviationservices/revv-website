@@ -1,7 +1,7 @@
 'use client'
 
 import { Linkedin, Youtube, Twitter, ChevronRight } from 'lucide-react'
-import revvLogo from '@/assets/revv-logo-full.jpeg'
+import revvLogo from '@/assets/revv-logo-full-removebg-preview.png'
 
 export function Footer() {
   const partnerships = [
@@ -96,22 +96,7 @@ export function Footer() {
           </div>
 
           {/* Partnerships */}
-          <div className="col-span-12 md:col-span-4">
-            <h4 className="font-bold text-lg mb-4 uppercase tracking-wider text-foreground">Strategic Engagements</h4>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {partnerships.map((partner) => (
-                <span 
-                  key={partner} 
-                  className="px-4 py-2 bg-primary/10 border border-primary/20 text-primary rounded-lg text-sm font-medium"
-                >
-                  {partner}
-                </span>
-              ))}
-            </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              We actively engage with government defense programs, research institutions, and strategic partners to advance India's aerospace capabilities.
-            </p>
-          </div>
+          
         </div>
 
         {/* Bottom Bar */}
@@ -122,7 +107,7 @@ export function Footer() {
             </div>
             <div className="text-sm text-muted-foreground flex items-center gap-2">
               <MapPinIcon className="w-4 h-4 text-primary" />
-              Taloja MIDC, Navi Mumbai, Maharashtra 410208, India
+               Navi Mumbai, Maharashtra 410208, India
             </div>
           </div>
         </div>

@@ -79,7 +79,7 @@ export function About() {
         >
           <div className="card-tactical p-8 lg:p-12">
             <p className="text-xl text-foreground leading-relaxed mb-6">
-              <strong className="text-primary">Revv Aerospace Pvt. Ltd.</strong> is a next-generation Indian aerospace and defense company headquartered in Taloja MIDC, Maharashtra. We specialize in the research, design, development, and deployment of indigenous Unmanned Aerial Vehicles (UAVs) and Autonomous Aerial Systems.
+              <strong className="text-primary">Revv Aerospace Pvt. Ltd.</strong> is a next-generation Indian aerospace and defense company headquartered in Navi Mumbai, Maharashtra. We specialize in the research, design, development, and deployment of indigenous Unmanned Aerial Vehicles (UAVs) and Autonomous Aerial Systems.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Our drone platforms serve defense, surveillance, logistics, meteorology, and geospatial sectors—delivering scalable, mission-customizable solutions powered by advanced AI, composite engineering, and real-time data systems.

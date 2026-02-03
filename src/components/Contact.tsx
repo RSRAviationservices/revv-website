@@ -273,7 +273,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Quick Links
             <div className="card-tactical p-8">
               <h3 className="text-lg font-bold mb-6 uppercase tracking-wider">Quick Actions</h3>
               
@@ -287,7 +287,7 @@ export function Contact() {
                   </button>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Social Links */}
             <div className="flex items-center gap-4">

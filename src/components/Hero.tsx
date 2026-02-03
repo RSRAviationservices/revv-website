@@ -3,7 +3,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Menu, X, ChevronDown, Radar, Shield, Target, Crosshair } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
-import revvLogo from '@/assets/revv-logo-full.jpeg'
+import revvLogo from '@/assets/revv-logo-full-removebg-preview.png'
+import heroVideo from '@/assets/Indigenous_Drone_Platform_Video_Generation.mp4'
 
 export function Hero() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -43,10 +44,10 @@ export function Hero() {
   }, [isMobileMenuOpen])
 
   const stats = [
-    { value: "4", label: "UAV Platforms", icon: Target },
-    { value: "120km", label: "Max Range", icon: Radar },
-    { value: "16+hrs", label: "Endurance", icon: Shield },
-    { value: "100%", label: "Indigenous", icon: Crosshair },
+    { value: "6", label: "UAV Platforms", icon: Target },
+    { value: "200+km", label: "Max Range", icon: Radar },
+    { value: "20+hrs", label: "Endurance", icon: Shield },
+    { value: "95%", label: "Indigenous", icon: Crosshair },
   ]
 
   return (
@@ -61,6 +62,7 @@ export function Hero() {
           alt="Military drone surveillance"
           className="w-full h-full object-cover scale-110"
         />
+        
         {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/50" />
@@ -214,6 +216,19 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mb-8"
           >
+            <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover opacity-60"
+              >
+                <source src={heroVideo} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
+            </div>
             <span className="inline-flex items-center gap-3 bg-primary/10 border border-primary/30 px-5 py-2.5 clip-tactical-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -223,29 +238,34 @@ export function Hero() {
             </span>
           </motion.div>
           
-          {/* Main Headline */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-8"
-            style={{ fontFamily: 'Orbitron' }}
-          >
-            <span className="block text-foreground">INDIA'S INDIGENOUS</span>
-            <span className="block text-primary text-glow-primary">DEFENSE DRONE</span>
-            <span className="block text-foreground">MANUFACTURER</span>
-          </motion.h1>
+          {/* Text Content Wrapper with Video Background */}
+          <div className="relative py-10">
+            
+
+            {/* Main Headline */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-8 relative z-10"
+              style={{ fontFamily: 'Orbitron' }}
+            >
+              <span className="block text-foreground">INDIA'S INDIGENOUS</span>
+              <span className="block text-primary text-glow-primary">DEFENSE DRONE</span>
+              <span className="block text-foreground">MANUFACTURER</span>
+            </motion.h1>
           
-          {/* Subheadline */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl leading-relaxed"
-          >
-            Engineering the future of <span className="text-accent text-glow-accent">tactical UAVs</span> for 
-            national security, surveillance, and strategic operations.
-          </motion.p>
+            {/* Subheadline */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl leading-relaxed relative z-10"
+            >
+              Engineering the future of <span className="text-accent text-glow-accent">tactical UAVs</span> for 
+              national security, surveillance, and strategic operations.
+            </motion.p>
+
           
           {/* CTA Buttons */}
           <motion.div 
@@ -302,6 +322,7 @@ export function Hero() {
               </motion.div>
             ))}
           </motion.div>
+          </div>
         </div>
       </motion.div>
 
@@ -321,7 +342,7 @@ export function Hero() {
             aboutSection?.scrollIntoView({ behavior: 'smooth' })
           }}
         >
-          <span className="text-xs uppercase tracking-widest text-muted-foreground">Scroll to explore</span>
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">Fly With Us</span>
           <ChevronDown className="w-6 h-6 text-primary" />
         </motion.div>
       </motion.div>

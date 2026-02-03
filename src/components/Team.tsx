@@ -156,47 +156,6 @@ export function Team() {
           ))}
         </div>
 
-        {/* Join Us CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="card-tactical p-8 lg:p-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-black mb-4" style={{ fontFamily: 'Orbitron' }}>
-                JOIN OUR TEAM
-              </h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                We're looking for passionate engineers, researchers, and innovators to help shape the future of Indian aerospace technology.
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {openPositions.map((role) => (
-                <span key={role} className="px-4 py-2 bg-muted/50 border border-border text-foreground rounded-lg text-sm font-medium">
-                  {role}
-                </span>
-              ))}
-            </div>
-            
-            <div className="text-center">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => {
-                  const contactSection = document.getElementById('contact')
-                  contactSection?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="btn-tactical px-8 py-4 text-white cursor-pointer inline-flex items-center gap-2"
-              >
-                <span>View Open Positions</span>
-                <ChevronRight className="w-5 h-5" />
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
