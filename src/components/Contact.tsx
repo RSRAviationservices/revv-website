@@ -293,7 +293,7 @@ export function Contact() {
             <div className="flex items-center gap-4">
               <a href="#" className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary/50 hover:text-primary transition-all">
                 <Linkedin className="w-5 h-5" />
-              </a>
+              </a>i
               <a href="#" className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary/50 hover:text-primary transition-all">
                 <Youtube className="w-5 h-5" />
               </a>
