@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import AnimationShowcase from "@/components/AnimationShowcase";
 import GlassCard from "@/components/GlassCard";
+import { EngineeringCapabilities } from "@/components/EngineeringCapabilities";
 
 const Index = () => {
   return (
@@ -39,6 +40,9 @@ const Index = () => {
         <div className="absolute top-40 right-32 w-6 h-6 bg-accent-emerald rounded-full drift-left opacity-40"></div>
         <div className="absolute bottom-32 left-1/4 w-5 h-5 bg-accent-purple rounded-full drift-right opacity-50"></div>
       </section>
+
+      {/* Engineering Capabilities */}
+      <EngineeringCapabilities />
 
       {/* Animation Showcase */}
       <section className="py-20 px-4">

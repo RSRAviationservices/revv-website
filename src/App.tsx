@@ -5,6 +5,7 @@ import { Products } from './components/Products'
 import { Team } from './components/Team'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
+import { EngineeringCapabilities } from './components/EngineeringCapabilities'
 
 export default function App() {
   return (
@@ -12,6 +13,9 @@ export default function App() {
       <main className="relative" role="main">
         <section id="hero" aria-label="Hero section">
           <Hero />
+        </section>
+        <section id="engineering-capabilities-section" aria-label="Engineering capabilities section">
+          <EngineeringCapabilities />
         </section>
         <section id="about-section" aria-label="About section">
           <About />

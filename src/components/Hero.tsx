@@ -105,7 +105,7 @@ export function Hero() {
 
             {/* Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Technology', 'Products', 'Team', 'Contact'].map((item) => (
+              {['About', 'Engineering', 'Technology', 'Products', 'Team', 'Contact'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`} 
@@ -175,7 +175,7 @@ export function Hero() {
           
           <div className="flex flex-col px-6 pb-6 h-full">
             <div className="flex flex-col space-y-2">
-              {['About', 'Technology', 'Products', 'Team', 'Contact'].map((item) => (
+              {['About', 'Engineering', 'Technology', 'Products', 'Team', 'Contact'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`} 
