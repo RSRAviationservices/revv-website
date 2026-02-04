@@ -83,19 +83,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Sectors */}
-          <div className="col-span-6 md:col-span-2">
-            <h4 className="font-bold text-lg mb-4 uppercase tracking-wider text-foreground">Sectors</h4>
-            <ul className="space-y-3">
-              {sectors.map((sector) => (
-                <li key={sector}>
-                  <span className="text-muted-foreground">{sector}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Partnerships */}
+         
           
         </div>
 
@@ -107,7 +95,7 @@ export function Footer() {
             </div>
             <div className="text-sm text-muted-foreground flex items-center gap-2">
               <MapPinIcon className="w-4 h-4 text-primary" />
-               Navi Mumbai, Maharashtra 410208, India
+              Navi Mumbai, Maharashtra 410208, India
             </div>
           </div>
         </div>
