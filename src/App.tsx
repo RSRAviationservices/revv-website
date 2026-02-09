@@ -7,6 +7,7 @@ import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { EngineeringCapabilities } from './components/EngineeringCapabilities'
 
+
 export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -29,6 +30,7 @@ export default function App() {
         <section id="team-section" aria-label="Team section">
           <Team />
         </section>
+
         <section id="contact-section" aria-label="Contact section">
           <Contact />
         </section>

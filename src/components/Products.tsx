@@ -169,6 +169,7 @@ export function Products() {
                     src={products[selectedProduct].image}
                     alt={products[selectedProduct].model}
                     className="w-full h-80 object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                   

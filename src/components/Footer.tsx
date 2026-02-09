@@ -39,7 +39,7 @@ export function Footer() {
           <div className="col-span-12 md:col-span-4">
             <div>
               <div className="mb-4">
-                <img src={revvLogo} alt="Revv Aerospace" className="h-16 w-auto invert" />
+                <img src={revvLogo} alt="Revv Aerospace" className="h-16 w-auto invert" loading="lazy" />
               </div>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 India's next-generation aerospace and defense company specializing in indigenous UAV development for mission-critical applications.
@@ -84,7 +84,30 @@ export function Footer() {
           </div>
 
          
-          
+           {/* FAQ Section */}
+          <div className="col-span-12 md:col-span-6">
+            <h4 className="font-bold text-lg mb-4 uppercase tracking-wider text-foreground">Common Inquiries</h4>
+            <div className="space-y-3">
+              {[
+                { q: "What types of drones do you manufacture?", a: "We specialize in indigenous tactical UAVs (Fixed-Wing, VTOL, Multirotor) for defense and industrial use." },
+                { q: "Are your platforms Made in India?", a: "Yes, 100% indigenous design and manufacturing, aligned with Atmanirbhar Bharat initiatives." },
+                { q: "Do you offer custom development?", a: "We provide end-to-end R&D and manufacturing for payloads, airframes, and mission software." },
+                { q: "What sectors do you serve?", a: "Primarily Defense, Surveillance, Meteorology, Logistics, and Geospatial mapping." },
+                { q: "Where can we see your drones?", a: "Visit our HQ in Navi Mumbai or request a demo for specific use cases." }
+              ].map((item, idx) => (
+                <details key={idx} className="group">
+                  <summary className="list-none flex justify-between items-center cursor-pointer text-muted-foreground hover:text-primary transition-colors text-sm py-1">
+                    <span>{item.q}</span>
+                    <span className="opacity-50 group-open:rotate-180 transition-transform">+</span>
+                  </summary>
+                  <p className="text-xs text-muted-foreground/80 mt-2 pl-2 border-l-2 border-primary/30 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+
         </div>
 
         {/* Bottom Bar */}
