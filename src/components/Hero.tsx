@@ -250,6 +250,7 @@ export function Hero() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-8 relative z-10"
               style={{ fontFamily: 'Orbitron' }}
             >
+              <span className="block text-primary text-2xl sm:text-3xl lg:text-4xl mb-2 tracking-widest">REVV AEROSPACE</span>
               <span className="block text-foreground">INDIA'S INDIGENOUS</span>
               <span className="block text-primary text-glow-primary">DEFENSE DRONE</span>
               <span className="block text-foreground">MANUFACTURER</span>
