@@ -15,13 +15,13 @@ export default function App() {
         <section id="hero" aria-label="Hero section">
           <Hero />
         </section>
-        <section id="engineering-capabilities-section" aria-label="Engineering capabilities section">
+        <section id="our-services" aria-label="Engineering capabilities section">
           <EngineeringCapabilities />
         </section>
         <section id="about-section" aria-label="About section">
           <About />
         </section>
-        <section id="technology-section" aria-label="Technology section">
+        <section id="our-capabilities" aria-label="Technology section">
           <Technology />
         </section>
         <section id="products-section" aria-label="Products section">

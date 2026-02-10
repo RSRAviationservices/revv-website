@@ -53,7 +53,7 @@ export function EngineeringCapabilities() {
   ]
 
   return (
-    <section id="engineering" className="relative py-24 bg-background overflow-hidden">
+    <section className="relative py-24 bg-background overflow-hidden">
       {/* Background Technical Grid */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute inset-0 grid-tactical" />
@@ -71,7 +71,7 @@ export function EngineeringCapabilities() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">
-              // Technical Capabilities
+               Technical Capabilities
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ fontFamily: 'Orbitron' }}>
               ENGINEERING, DESIGN & <br />

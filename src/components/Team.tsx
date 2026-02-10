@@ -13,11 +13,19 @@ export function Team() {
 
   const team = [
     {
+      name: "Suresh Rahangdale",
+      role: "Director & Head of Funding",
+      description: "Provides financial oversight and strategic guidance. Expertise in investment and partnerships drives growth trajectory.",
+      image: sureshImg,
+      linkedin: "https://www.linkedin.com/in/suresh-rahangdale-67992b169",
+      color: "primary"
+    },
+    {
       name: "Rishab Kumar Yadav",
       role: "Head of R&D & Engineering",
       description: "Leads all research and engineering development. Expert in aerodynamics, propulsion systems, and autonomous UAV architectures.",
       image: sameerImg,
-      linkedin: "https://www.linkedin.com/company/revv-aerospace-pvt-ltd/",
+      linkedin: "https://www.linkedin.com/in/rishab-yadav-6218942ba/",
       color: "primary"
     },
     {
@@ -27,15 +35,8 @@ export function Team() {
       image: rishabImg,
       linkedin: "https://www.linkedin.com/in/sameer-khan-92a400249",
       color: "accent"
-    },
-    {
-      name: "Suresh Rahangdale",
-      role: "Director & Head of Funding",
-      description: "Provides financial oversight and strategic guidance. Expertise in investment and partnerships drives growth trajectory.",
-      image: sureshImg,
-      linkedin: "https://www.linkedin.com/in/suresh-rahangdale-67992b169",
-      color: "primary"
     }
+    
   ]
 
   const openPositions = [

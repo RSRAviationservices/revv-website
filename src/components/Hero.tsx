@@ -105,10 +105,10 @@ export function Hero() {
 
             {/* Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Engineering', 'Technology', 'Products', 'Team', 'Contact'].map((item) => (
+              {['About', 'Our Services', 'Our Capabilities', 'Products', 'Team', 'Contact'].map((item) => (
                 <a 
                   key={item}
-                  href={`#${item.toLowerCase()}`} 
+                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} 
                   className="text-foreground/80 hover:text-primary font-semibold uppercase text-sm tracking-wider gentle-animation story-link"
                 >
                   {item}
@@ -119,17 +119,14 @@ export function Hero() {
             {/* Right Side - CTA + Mobile Menu */}
             <div className="flex items-center space-x-3 relative">
               {/* CTA Button - Hidden on mobile */}
-              <motion.button
+              <motion.a
+                href="#contact"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => {
-                  const contactSection = document.getElementById('contact')
-                  contactSection?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="hidden sm:block btn-tactical px-6 py-3 text-white text-sm cursor-pointer"
+                className="hidden sm:block btn-tactical px-6 py-3 text-white text-sm cursor-pointer flex items-center justify-center"
               >
-                <span>Defense Enquiry</span>
-              </motion.button>
+                <span>Enquiry</span>
+              </motion.a>
 
               {/* Mobile Hamburger Menu Button */}
               <button
@@ -187,18 +184,15 @@ export function Hero() {
               ))}
             </div>
 
-            <motion.button
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => {
-                const contactSection = document.getElementById('contact')
-                contactSection?.scrollIntoView({ behavior: 'smooth' })
-                setIsMobileMenuOpen(false)
-              }}
-              className="btn-tactical px-6 py-4 text-white mt-8 cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="btn-tactical px-6 py-4 text-white mt-8 cursor-pointer flex items-center justify-center"
             >
               <span>Defense Enquiry</span>
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </motion.div>
